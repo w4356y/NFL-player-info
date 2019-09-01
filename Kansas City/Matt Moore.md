@@ -29,7 +29,8 @@ https://encyclopedia.thefreedictionary.com/Matt+Moore+(American+football)
 - 2010年，前两个赛季的表现让球队把1号QB的位置留给了Moore，但球队在第48顺位选了新秀四分卫Jimmy Clausen, 在赛季前两周扔出4INT 后，球队把先发四分卫的位置给了Jimmy Clausen,但其表现不佳，球队又重新扶正Moore， 但在第9周由于碰撞伤了肩膀，结束赛季。
 - 2011年，被海豚签下作为Chad Henne的替补，荣获队内赛季MVP。
 - 2012年，与Tannehill和David Garrard竞争球队四分卫。
-- 2013~2017，Tannehill的替补，2016赛季得益于球队伤病，第一次参加外卡赛输给钢人。
+- 2013~2018，Tannehill的替补，2016赛季得益于球队伤病，第一次参加外卡赛输给钢人。
+- 2019年8月，签约酋长。
 
 ## 近两年数据
 - 2016  761yds  8 TD 3 INT 63.2%CMP 105.6(Rating)
