@@ -1,0 +1,65 @@
+#!/usr/bin/python3.6
+# --**-- coding: utf-8 --**--
+
+import os
+import urllib3
+import requests
+import numpy as np
+from bs4 import BeautifulSoup
+kc_url="https://www.chiefs.com/team/players-roster/"
+nyg_url="https://www.giants.com/team/players-roster/"
+class crawl_roaster(object):
+    def __init__(self):
+        self.kc_url="https://www.chiefs.com/team/players-roster/"
+        self.nyg_url="https://www.giants.com/team/players-roster/"
+
+
+    def crawl(self,url):
+        r = requests.get(url=url)
+        html = r.text
+        bf = BeautifulSoup(html, 'lxml')
+        texts = bf.find_all('td')
+        return (texts)
+    def parse_html(self,texts, out_file):
+        arr_player = []
+        arr_number = []
+        arr_position = []
+        arr_wt = []
+        arr_ht = []
+        arr_college = []
+        arr_age = []
+        arr_exp = []
+        for i in range(int(len(texts) / 8)):
+            arr_player.append(texts[8 * i].get_text().replace("\n", ""))
+            arr_number.append(texts[8 * i + 1].get_text())
+            arr_position.append(texts[8 * i + 2].get_text())
+            arr_ht.append(texts[8 * i + 3].get_text())
+            arr_wt.append(texts[8 * i + 4].get_text())
+            arr_age.append(texts[8 * i + 5].get_text())
+            arr_exp.append(texts[8 * i + 6].get_text())
+            arr_college.append(texts[8 * i + 7].get_text())
+        fw = open(out_file, 'w')
+        fw.write("| ")
+        fw.write(' | '.join(['Player', 'Number', 'Position', 'Height', 'Weight', 'Age', 'Experience', 'College']))
+        fw.write(" |")
+        fw.write("\n")
+        fw.write(
+            "| ------------- | ------------- |------------- |------------- |------------- |------------- |------------- |------------- |")
+        fw.write("\n")
+        for j in range(int(len(texts) / 8)):
+            fw.write("| ")
+            fw.write(" | ".join(
+                [arr_player[j], arr_number[j], arr_position[j], arr_ht[j], arr_wt[j], arr_age[j], arr_exp[j],
+                 arr_college[j]]))
+            fw.write(" |")
+            fw.write("\n")
+        return (None)
+def main():
+    crawl= crawl_roaster();
+    texts =crawl.crawl(kc_url);
+    crawl.parse_html(texts=texts, out_file="kc_roaster1.txt")
+    texts = crawl.crawl(nyg_url);
+    crawl.parse_html(texts=texts, out_file="nyg_roaster1.txt")
+
+if __name__=="__main__":
+    main()
