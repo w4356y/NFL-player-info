@@ -1,4 +1,4 @@
-# All about Juan Thornhill(DB)
+# All about Juan Thornhill(S)
 
 
 ## 个人基本信息
